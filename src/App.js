@@ -1,21 +1,26 @@
 import React from "react";
-import Form from "./Form.js";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import Home from "./Components/Home";
+import Form from "./Components/Form";
+import Pizza from "./Components/Pizza";
 
 const App = () => {
   return (
     <div>
       <nav>
-        <h1>Caleb's Famous Pizza</h1>
-        <h2>Cyo Pizza</h2>
+        <Link to="/">Home</Link>
+        <Link to="./Form.js">Cyo Pizza</Link>
       </nav>
-      <Route>
+      <Route path="/">
         <Home />
       </Route>
-
-      <Form />
+      <Route to="./Components/Form">
+        <Form />
+      </Route>
+      <Route to="./Components/Pizza">
+        <Pizza />
+      </Route>
     </div>
   );
 };
